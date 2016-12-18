@@ -1,3 +1,5 @@
+'use strict';
+
 const expect = require('chai').expect;
 const getConfig = require('.');
 const path = require('path');

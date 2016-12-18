@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gakimball/flexiconfig.git"
+    "url": "git+https://github.com/spacedoc/flexiconfig.git"
   },
   "keywords": [
     "flexiconfig"
@@ -16,9 +16,9 @@
   "author": "Geoff Kimball <geoff@geoffkimball.com> (http://geoffkimball.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gakimball/flexiconfig/issues"
+    "url": "https://github.com/spacedoc/flexiconfig/issues"
   },
-  "homepage": "https://github.com/gakimball/flexiconfig#readme",
+  "homepage": "https://github.com/spacedoc/flexiconfig#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"

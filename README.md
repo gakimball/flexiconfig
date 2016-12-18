@@ -2,7 +2,7 @@
 
 > Consume library configuration from multiple places
 
-[![Travis](https://img.shields.io/travis/gakimball/flexiconfig.svg?maxAge=2592000)](https://travis-ci.org/gakimball/flexiconfig) [![npm](https://img.shields.io/npm/v/flexiconfig.svg?maxAge=2592000)](https://www.npmjs.com/package/flexiconfig)
+[![Travis](https://img.shields.io/travis/spacedoc/flexiconfig.svg?maxAge=2592000)](https://travis-ci.org/spacedoc/flexiconfig) [![npm](https://img.shields.io/npm/v/flexiconfig.svg?maxAge=2592000)](https://www.npmjs.com/package/flexiconfig)
 
 If you have a library that involves large configuration, you might want to give users multiple ways to load the configuration, such as:
 
@@ -67,7 +67,7 @@ module.exports = function getKittens(opts) {
 ## Local Development
 
 ```bash
-git clone https://github.com/gakimball/flexiconfig
+git clone https://github.com/spacedoc/flexiconfig
 cd flexiconfig
 npm install
 npm test

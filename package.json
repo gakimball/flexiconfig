@@ -29,5 +29,8 @@
     "js-yaml": "^3.7.0",
     "lodash.assign": "^4.2.0",
     "parents": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=4"
   }
 }

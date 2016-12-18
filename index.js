@@ -1,15 +1,30 @@
+const assign = require('lodash.assign');
+const parents = require('parents');
 const runLoader = require('./lib/runLoader');
 
-module.exports = function getConfig(loaders, options) {
-  for (let i in loaders) {
-    const result = runLoader(loaders[i], options);
+module.exports = function getConfig(loaders, opts) {
+  const options = assign({
+    cwd: process.cwd(),
+    travel: true
+  }, opts);
 
-    if (result instanceof Error) {
-      throw result;
-    }
+  const folders = options.travel
+    ? parents(options.cwd)
+    : [options.cwd];
 
-    if (result !== false) {
-      return result;
+  for (let folder of folders) {
+    for (let i in loaders) {
+      const result = runLoader(loaders[i], assign({}, options, {
+        cwd: folder
+      }));
+
+      if (result instanceof Error) {
+        throw result;
+      }
+
+      if (result !== false) {
+        return result;
+      }
     }
   }
 

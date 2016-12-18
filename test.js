@@ -3,6 +3,33 @@ const getConfig = require('.');
 const path = require('path');
 const runLoader = require('./lib/runLoader');
 
+describe('getConfig()', () => {
+  it('returns the first match in a sequence', () => {
+    expect(getConfig([{}, { kittens: true }, {}])).to.eql({ kittens: true });
+  });
+
+  it('throws an error if no match is found', () => {
+    expect(() => getConfig([{}])).to.throw(Error);
+  });
+
+  it('travels up directories to find a match', () => {
+    const opts = {
+      cwd: path.join(__dirname, 'fixtures/sub')
+    };
+
+    expect(getConfig(['test.json'], opts)).to.be.an('object');
+  });
+
+  it('allows directory traveling to be disabled', () => {
+    const opts = {
+      cwd: path.join(__dirname, 'fixtures/sub'),
+      travel: false
+    };
+
+    expect(() => getConfig(['test.json'], opts)).to.throw(Error);
+  });
+});
+
 describe('runLoader()', () => {
   // In the below tests, these three terms are used to describe the outcome of a loader:
   //   - "pass": config object is valid

@@ -10,7 +10,7 @@ If you have a library that involves large configuration, you might want to give 
 - Loading from a file `.kittensrc`
 - Reading from a property of `package.json`
 
-This library allows you to set those, in any preference order you want.
+This library allows you to set those, in any preference order you want. The first configuration method that yields a result will be returned as an object.
 
 ## Installation
 
@@ -20,9 +20,7 @@ npm install flexiconfig
 
 ## Usage
 
-In the below example, the `getConfig()` function will try to load first from the `opts` object passed to the function, then from a file called `.kittensrc` in the current working directory, and finally in `package.json`, under the top-level key `"kittens"`.
-
-If `opts` is an empty object, or not an object, it will be skipped.
+In the below example, the `getConfig()` function will try to load first from the `opts` object passed to the function, then from a file called `.kittensrc` in the current working directory, and finally in `package.json`, under the top-level key `"kittens"`. If none of those work, it will move up one folder and try again, and on and on.
 
 ```js
 const getConfig = require('flexiconfig');

@@ -1,26 +1,32 @@
 {
-  "name": "MODULE",
+  "name": "flexiconfig",
   "version": "1.0.0",
-  "description": "MODULE_DESCRIPTION",
+  "description": "Consume library configuration from multiple places",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gakimball/MODULE.git"
+    "url": "git+https://github.com/gakimball/flexiconfig.git"
   },
   "keywords": [
-    "MODULE"
+    "flexiconfig"
   ],
   "author": "Geoff Kimball <geoff@geoffkimball.com> (http://geoffkimball.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gakimball/MODULE/issues"
+    "url": "https://github.com/gakimball/flexiconfig/issues"
   },
-  "homepage": "https://github.com/gakimball/MODULE#readme",
+  "homepage": "https://github.com/gakimball/flexiconfig#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "is-empty-object": "^1.1.1",
+    "is-object": "^1.0.1",
+    "js-yaml": "^3.7.0",
+    "lodash.assign": "^4.2.0"
   }
 }

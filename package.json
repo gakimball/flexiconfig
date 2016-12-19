@@ -1,6 +1,6 @@
 {
   "name": "flexiconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Consume library configuration from multiple places",
   "main": "index.js",
   "scripts": {

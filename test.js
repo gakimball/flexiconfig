@@ -59,6 +59,10 @@ describe('runLoader()', () => {
     expect(runLoader('fixtures/test.yml')).to.be.an('object');
   });
 
+  it('skips a file that is not found', () => {
+    expect(runLoader('fixtures/nope.json')).to.be.false;
+  });
+
   it('fails a file that is not valid JSON or YML', () => {
     expect(runLoader('fixtures/.failrc')).to.be.an.instanceOf(Error);
   });
@@ -69,21 +73,5 @@ describe('runLoader()', () => {
     };
 
     expect(runLoader('test.json', opts)).to.be.an('object');
-  });
-
-  it('allows file parsing to be restricted to JSON', () => {
-    const opts = {
-      format: 'json'
-    };
-
-    expect(runLoader('fixtures/test.yml', opts)).to.be.an.instanceOf(Error);
-  });
-
-  it('allows file parsing to be restricted to YML', () => {
-    const opts = {
-      format: 'yml'
-    };
-
-    expect(runLoader('fixtures/.failrc', opts)).to.be.an.instanceOf(Error);
   });
 });

@@ -27,6 +27,7 @@
     "is-empty-object": "^1.1.1",
     "is-object": "^1.0.1",
     "js-yaml": "^3.7.0",
+    "load-whatever": "^0.1.0",
     "lodash.assign": "^4.2.0",
     "parents": "^1.0.1"
   },

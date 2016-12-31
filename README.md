@@ -38,11 +38,10 @@ Produce a configuration object from the first source that yields one.
 
 - **loaders** (Array): sources to try. Each item can be:
   - An object: if the object has properties, then it's a match. If it has no properties, it's skipped.
-  - A string: filename to load from the current working directory, to be parsed in its entirety. It can be JSON or YML, and you can configure which formats are allowed.
+  - A string: filename to load from the current working directory, to be parsed in its entirety. It can be JSON, YML, or a JavaScript file with `module.exports`.
   - A string with the format `package.json#[KEY]`, where `[KEY]` is a top-level key on the `package.json` in the current working directory.
 - **options** (Object): lookup configuration.
   - **cwd** (String): directory to look for files in. Defaults to `process.cwd()`.
-  - **format** (String): restrict the format of a loaded config file to either `json` or `yml`. By default, either can be used&mdash;the file will be parsed as JSON first, and then as YML if that fails.
   - **travel** (Boolean): if no configs are found in the current working directory, the next folder up will be searched next, and on and on until something is found. Defaults to `true`.
 
 Returns the first config object found based on the order of `loaders`. Throws an error on any of these conditions:

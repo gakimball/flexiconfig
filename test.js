@@ -67,6 +67,18 @@ describe('runLoader()', () => {
     expect(runLoader('fixtures/.failrc')).to.be.an.instanceOf(Error);
   });
 
+  it('passes a key within package.json', () => {
+    expect(runLoader('package.json#test')).to.be.an('object');
+  });
+
+  it('skips a package.json missing the needed key', () => {
+    expect(runLoader('package.json#nope')).to.be.false;
+  });
+
+  it('fails a package.json with a non-object key', () => {
+    expect(runLoader('package.json#name')).to.be.an.instanceOf(Error);
+  });
+
   it('allows a specific CWD to be set', () => {
     const opts = {
       cwd: path.join(__dirname, 'fixtures')
